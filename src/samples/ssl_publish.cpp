@@ -50,9 +50,9 @@
 #include "mqtt/async_client.h"
 
 const std::string DFLT_SERVER_ADDRESS	{ "ssl://localhost:8883" };
-const std::string DFLT_CLIENT_ID		{ "ssl_publish_cpp" };
+const std::string DFLT_CLIENT_ID		{ "mosqpub" };
 
-const std::string KEY_STORE				{ "/etc/mosquitto/config/certs/client.crt" };
+const std::string KEY_STORE				{ "/etc/mosquitto/config/certs/pub.crt" };
 const std::string TRUST_STORE			{ "/etc/mosquitto/config/certs/ca.crt" };
 
 const std::string LWT_TOPIC				{ "events/disconnect" };
@@ -139,7 +139,7 @@ int main(int argc, char* argv[])
 		// Connect using SSL/TLS
 
 		cout << "\nConnecting..." << endl;
-		mqtt::token_ptr conntok = client.connect(connopts);
+		mqtt::token_ptr conntok = client.connect();
 		cout << "Waiting for the connection..." << endl;
 		conntok->wait();
 		cout << "  ...OK" << endl;
