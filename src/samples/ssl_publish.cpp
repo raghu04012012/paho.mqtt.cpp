@@ -49,11 +49,11 @@
 #include <cstring>
 #include "mqtt/async_client.h"
 
-const std::string DFLT_SERVER_ADDRESS	{ "ssl://localhost:18884" };
+const std::string DFLT_SERVER_ADDRESS	{ "ssl://localhost:8883" };
 const std::string DFLT_CLIENT_ID		{ "ssl_publish_cpp" };
 
-const std::string KEY_STORE				{ "client.pem" };
-const std::string TRUST_STORE			{ "test-root-ca.crt" };
+const std::string KEY_STORE				{ "/etc/mosquitto/config/certs/client.crt" };
+const std::string TRUST_STORE			{ "/etc/mosquitto/config/certs/ca.crt" };
 
 const std::string LWT_TOPIC				{ "events/disconnect" };
 const std::string LWT_PAYLOAD			{ "Last will and testament." };
