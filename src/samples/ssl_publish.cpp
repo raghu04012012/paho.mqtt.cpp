@@ -52,7 +52,7 @@
 const std::string DFLT_SERVER_ADDRESS	{ "ssl://localhost:8883" };
 const std::string DFLT_CLIENT_ID		{ "mosqpub" };
 
-const std::string KEY_STORE				{ "/etc/mosquitto/config/certs/pub.crt" };
+const std::string KEY_STORE				{ "/etc/mosquitto/config/certs/pub.pem" };
 const std::string TRUST_STORE			{ "/etc/mosquitto/config/certs/ca.crt" };
 
 const std::string LWT_TOPIC				{ "events/disconnect" };
