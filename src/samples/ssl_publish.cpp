@@ -127,8 +127,7 @@ int main(int argc, char* argv[])
 	auto willmsg = mqtt::message(LWT_TOPIC, LWT_PAYLOAD, QOS, true);
 
 	auto connopts = mqtt::connect_options_builder()
-					    .user_name("testuser")
-					    .password("testpassword")
+					    .user_name("moqpub")
 					    .will(std::move(willmsg))
 						.ssl(std::move(sslopts))
 						.finalize();
@@ -139,7 +138,7 @@ int main(int argc, char* argv[])
 		// Connect using SSL/TLS
 
 		cout << "\nConnecting..." << endl;
-		mqtt::token_ptr conntok = client.connect();
+		mqtt::token_ptr conntok = client.connect(connopts);
 		cout << "Waiting for the connection..." << endl;
 		conntok->wait();
 		cout << "  ...OK" << endl;
